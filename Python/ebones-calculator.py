@@ -124,13 +124,13 @@ def Division():
   return that problem type.
   '''
   
-  div = input_int('Enter Dividend')
-  div = input_int('Enter Divisor')
+  dividend = input_int('Enter Dividend')
+  divisor = input_int('Enter Divisor')
 
-  ans = div / div
+  ans = dividend / divisor
 
   print()
-  print('ANSWER: {0} % {1} = {2}'.format(div, div, ans))
+  print('ANSWER: {0} / {1} = {2}'.format(dividend, divisor, ans))
   print()
   input('Press Enter')
   return
