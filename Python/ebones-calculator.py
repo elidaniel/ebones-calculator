@@ -1,5 +1,6 @@
 # vim:encoding=utf-8:ts=2:sw=2:expandtab
 
+from primes import generate_primes
 
 ###############################################################################
 def GetMenuChoice(): 
@@ -9,16 +10,17 @@ def GetMenuChoice():
   '''
   while True:
     print()
-    print('(a) - addition')
-    print('(s) - subtraction')
-    print('(m) - multiplication')
-    print('(d) - division')
+    print('(a)  - addition')
+    print('(s)  - subtraction')
+    print('(m)  - multiplication')
+    print('(d)  - division')
     print('(dr) - divesion remanders')
-    print('(e) - exit')
+    print('(pl) - prime number list')
+    print('(e)  - exit')
     print()
     text = input('Enter type of problem: ')
 
-    if text not in ('a', 's', 'm', 'd', 'e' 'dr'):
+    if text not in ('a', 's', 'm', 'd', 'e', 'dr', 'pl'):
       print()
       print('Error: invalid input')
       continue
@@ -92,9 +94,6 @@ def Subtraction():
   
   return
 
-
-
-
 ###############################################################################
 def Multiplication():
   '''
@@ -113,11 +112,7 @@ def Multiplication():
   input('Press Enter')
   return
 
-
 ################################################################################
-
-
-
 def Division():
   '''
   This function will prompt the user to input a valid problem type and then
@@ -135,12 +130,7 @@ def Division():
   input('Press Enter')
   return
 
-
-
 ################################################################################
-
-
-
 def Division_remander():
   '''
   This function will prompt the user to input a valid problem type and then
@@ -158,6 +148,27 @@ def Division_remander():
   input('Press Enter')
   
   return
+
+###############################################################################
+def Prime_List():
+  '''
+  This function will generate a list of prime numbers
+  '''
+  
+  max = input_int('Biggest prime number? ')
+  
+  primes = generate_primes(max)
+  
+  print()
+  print('Primes < {0}: {1}'.format(max, primes))
+  print()
+  input('Press Enter')
+  
+  return
+  
+  
+  
+  
 ###############################################################################
 while True:
 
@@ -181,6 +192,8 @@ while True:
   elif pt == 'dr':
     Division_renamder()
 
+  elif pt == 'pl':
+    Prime_List()
 
 
 pass#while
