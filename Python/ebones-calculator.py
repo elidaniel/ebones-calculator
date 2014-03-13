@@ -1,6 +1,6 @@
 # vim:encoding=utf-8:ts=2:sw=2:expandtab
 
-from primes import generate_primes
+from primes import generate_primes, reduce
 
 ###############################################################################
 def GetMenuChoice(): 
@@ -15,12 +15,13 @@ def GetMenuChoice():
     print('(m)  - multiplication')
     print('(d)  - division')
     print('(dr) - divesion remanders')
+    print('(df) - divesion with fractions')
     print('(pl) - prime number list')
     print('(e)  - exit')
     print()
     text = input('Enter type of problem: ')
 
-    if text not in ('a', 's', 'm', 'd', 'e', 'dr', 'pl'):
+    if text not in ('a', 's', 'm', 'd', 'e', 'dr', 'df', 'pl'):
       print()
       print('Error: invalid input')
       continue
@@ -148,6 +149,30 @@ def Division_remainder():
   input('Press Enter')
   return
 
+################################################################################
+def Division_fraction():
+  '''
+  '''
+  
+  dividend  = input_int('Enter Dividend')
+  divisor = input_int('Enter Divisor')
+
+  ans = dividend // divisor
+  rem = dividend % divisor
+
+  print()
+  
+  if rem == 0:
+    print('ANSWER: {0} / {1} = {2}'.format(dividend, divisor, ans))  
+  else:
+    f1,f2 = reduce(rem, divisor)
+    print('ANSWER: {0} / {1} = {2} {3}/{4}'.format(dividend, divisor, ans, f1, f2))  
+  
+   
+  print()
+  input('Press Enter')
+  return
+
 ###############################################################################
 def Prime_List():
   '''
@@ -190,6 +215,9 @@ while True:
 
   elif pt == 'dr':
     Division_remainder()
+
+  elif pt == 'df':
+    Division_fraction()
 
   elif pt == 'pl':
     Prime_List()
