@@ -55,7 +55,6 @@ def input_int(text):
     
   return val
 
-
 ###############################################################################
 def Addition():
   '''
@@ -63,13 +62,13 @@ def Addition():
   return that problem type.
   '''
   
-  aug = input_int('Enter Augend')
-  add = input_int('Enter Addend')
+  Augend = input_int('Enter Augend')
+  Addend = input_int('Enter Addend')
 
-  ans = aug + add
+  ans  =  Augend + Addend      
   
   print()
-  print('ANSWER: {0} + {1} = {2}'.format(num, aug, add))
+  print('ANSWER: {0} + {1} = {2}'.format(num, Augend, Addend))
   print()
   input('Press Enter')
   
@@ -101,13 +100,13 @@ def Multiplication():
   return that problem type.
   '''
   
-  mul = input_int('Enter Multiplicand')
-  mul = input_int('Enter Multiplier')
+  multiplicand = input_int('Enter Multiplicand')
+  multiplier = input_int('Enter Multiplier')
 
-  ans = mul * mul
+  ans = multiplicand * multiplier
   
   print()
-  print('ANSWER: {0} x {1} = {2}'.format(num, mul, mul))
+  print('ANSWER: {0} x {1} = {2}'.format(num, multiplicand, multiplier))
   print()
   input('Press Enter')
   return
@@ -131,22 +130,22 @@ def Division():
   return
 
 ################################################################################
-def Division_remander():
+def Division_remainder():
   '''
   This function will prompt the user to input a valid problem type and then
   return that problem type.
   '''
   
-  div = input_int('Enter Dividend')
-  div = input_int('Enter Divisor')
+  dividend  = input_int('Enter Dividend')
+  divisor = input_int('Enter Divisor')
 
-  ans = div // div
-  
+  ans = dividend // divisor
+  rem = dividend % divisor
+
   print()
-  print('ANSWER: {0} // {1} = {2}'.format(div, div, ans))
+  print('ANSWER: {0} / {1} = {2} R{3}'.format(dividend, divisor, ans, rem))
   print()
   input('Press Enter')
-  
   return
 
 ###############################################################################
@@ -160,7 +159,7 @@ def Prime_List():
   primes = generate_primes(max)
   
   print()
-  print('Primes < {0}: {1}'.format(max, primes))
+  print('Primes <= {0}: {1}'.format(max, list(primes)))
   print()
   input('Press Enter')
   
@@ -190,7 +189,7 @@ while True:
     Division()
 
   elif pt == 'dr':
-    Division_renamder()
+    Division_remainder()
 
   elif pt == 'pl':
     Prime_List()
